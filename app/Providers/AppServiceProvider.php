@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace experto\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -162,6 +162,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Elibyy\TCPDF\ServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -176,11 +178,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        experto\Providers\AppServiceProvider::class,
+        experto\Providers\AuthServiceProvider::class,
+        // experto\Providers\BroadcastServiceProvider::class,
+        experto\Providers\EventServiceProvider::class,
+        experto\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -220,6 +222,7 @@ return [
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
+        'PDF' => Elibyy\TCPDF\Facades\TCPDF::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,

@@ -25,37 +25,37 @@
                     <div class="">
                         <p>Nombre:</p>
                         <div class="">
-                            <input id="name" type="text" class="" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="" name="nom_user" value="{{ old('name') }}" required autofocus>
                         </div>
                     </div>
                     <div class="">
                         <p>Apellido paterno</p>
                         <div class="">
-                            <input id="name" type="text" class="" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="" name="pat_user" value="{{ old('name') }}" required autofocus>
                         </div>
                     </div>
                     <div class="">
                         <p>Apellido Materno</p>
                         <div class="">
-                            <input id="name" type="text" class="" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="" name="mat_user" value="{{ old('name') }}" required autofocus>
                         </div>
                     </div>
                     <div class="">
                         <p >Numero de carnet de identidad</p>
                         <div class="">
-                            <input id="email" type="text" class="" name="email" value="{{ old('email') }}" required>
+                            <input id="email" type="text" class="" name="ci_user" value="{{ old('email') }}" required>
                         </div>
                     </div>
                     <div class="">
                         <p >Fecha de nacimiento</p>
                         <div class="">
-                            <input id="date" type="date" class="" name="email" value="{{ old('email') }}" required>
+                            <input id="date" type="date" class="" name="fec_user" value="{{ old('email') }}" required>
                         </div>
                     </div>
                     <div class="">
                       <p >Nombre de usuario (Nick)</p>
                       <div class="">
-                        <input id="email" type="text" class="" name="email" value="{{ old('email') }}" required>
+                        <input id="email" type="text" class="" name="nick_user" value="{{ old('email') }}" required>
                       </div>
                     </div>
                     <div class="">
