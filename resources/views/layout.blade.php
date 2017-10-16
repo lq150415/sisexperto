@@ -136,11 +136,17 @@
                                     <p class="hidden-lg hidden-md">Notificaciones</p>
                                 </a>
                                 <ul class="dropdown-menu">
-                                  @foreach ($reservas as $reserva)
+                                  @if (count($reservas)>0)
+                                    @foreach ($reservas as $reserva)
+                                      <li>
+                                          <a href="{{url('diagnostico/'.$reserva->id_rpac)}}">Reserva a horas {{$reserva->hor_res}} del paciente {{$reserva->nom_pac.' '.$reserva->pat_pac.' '.$reserva->mat_pac}}</a>
+                                      </li>
+                                    @endforeach
+                                  @else
                                     <li>
-                                        <a href="{{url('diagnostico/'.$reserva->id_rpac)}}">Reserva a horas {{$reserva->hor_res}} del paciente {{$reserva->nom_pac.' '.$reserva->pat_pac.' '.$reserva->mat_pac}}</a>
+                                      <a>No tiene notificaciones nuevas</a>
                                     </li>
-                                  @endforeach
+                                  @endif
 
                                 </ul>
                             </li>

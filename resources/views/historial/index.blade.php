@@ -34,11 +34,20 @@ Historial de pacientes  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TROPICALES
 	</div>
   </div>
 </div>
+@foreach ($pacientes as $key => $paciente)
+@php
+    $edad = \Carbon\Carbon::createFromFormat('Y-m-d', $paciente->fec_pac)->format('Y');
+    $edad2 = \Carbon\Carbon::createFromFormat('Y-m-d', $paciente->fec_pac)->format('m');
+    $edad3 = \Carbon\Carbon::createFromFormat('Y-m-d', $paciente->fec_pac)->format('d');
+    $date[$key] = \Carbon\Carbon::createFromDate($edad,$edad2,$edad3)->age;
+@endphp
+@endforeach
 @endsection
 @section('script')
   <script type="text/javascript">
     $(function() {
       var pacientes ={!! json_encode($pacientes->toArray()) !!};
+      var date ={!! json_encode($date) !!};
       for (var i = 0; i < pacientes.length; i++) {
         var id=pacientes[i].id;
         var nom=pacientes[i].nom_pac;
@@ -52,6 +61,7 @@ Historial de pacientes  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TROPICALES
         var dir=pacientes[i].dir_pac;
         var b="'"+id+"','"+nom+"','"+pat+"','"+mat+"','"+fec+"','"+ci+"','"+gen+"','"+ocu+"','"+tel+"','"+dir+"'";
       pacientes[i].boton='<a title="Historial" class="btn btn-warning btn-raised active" href="historial/pacientes/'+pacientes[i].id+'"><i class="material-icons">history</i></a>';
+      pacientes[i].edad=date[i];
     }
 
       $('#pacientes').dynatable({
