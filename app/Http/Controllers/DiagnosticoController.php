@@ -60,26 +60,11 @@ class DiagnosticoController extends Controller
             $codigo->save();
             $response = array(
               'pregunta' => '¿'.$pregunta->des_sin.'?',
-              'preg' =>1,
+              'preg' =>2,
               'pac' => $pac,
               'msg' => 'Setting created successfully',
             );
           return \Response::json($response);
-        case '1':
-        $pregunta= Sintoma::find(2);
-        $diagnostico=Diagnostico::orderBy('id','DESC')->first();
-        if ($res=='100') {
-          $siguiente=3;
-        }else{
-          $siguiente=4;
-        }
-        $response = array(
-          'pregunta' => '¿'.$pregunta->des_sin.'?',
-          'preg' =>$siguiente,
-          'dia' => $diagnostico->id,
-          'pac' => $pac,
-        );
-      return \Response::json($response);
         case '2':
         $pregunta= Sintoma::find(2);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
@@ -99,9 +84,9 @@ class DiagnosticoController extends Controller
         $pregunta= Sintoma::find(3);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=5;
         }else{
-          $siguiente=4;
+          $siguiente=6;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -110,13 +95,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '4':
+        $pregunta= Sintoma::find(4);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=33;
         }else{
-          $siguiente=4;
+          $siguiente=34;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -125,13 +110,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '5':
+        $pregunta= Sintoma::find(5);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=7;
         }else{
-          $siguiente=4;
+          $siguiente=8;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -140,13 +125,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '6':
+        $pregunta= Sintoma::find(6);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=29;
         }else{
-          $siguiente=4;
+          $siguiente=100;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -155,13 +140,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '7':
+        $pregunta= Sintoma::find(7);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=9;
         }else{
-          $siguiente=4;
+          $siguiente=10;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -170,13 +155,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '8':
+        $pregunta= Sintoma::find(8);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=18;
         }else{
-          $siguiente=4;
+          $siguiente=19;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -185,13 +170,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '9':
+        $pregunta= Sintoma::find(9);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=11;
         }else{
-          $siguiente=4;
+          $siguiente=11;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -200,13 +185,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '10':
+        $pregunta= Sintoma::find(10);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=14;
         }else{
-          $siguiente=4;
+          $siguiente=101;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -215,13 +200,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '11':
+        $pregunta= Sintoma::find(11);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=12;
         }else{
-          $siguiente=4;
+          $siguiente=12;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -230,13 +215,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '12':
+        $pregunta= Sintoma::find(12);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=13;
         }else{
-          $siguiente=4;
+          $siguiente=13;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -245,13 +230,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '13':
+        $pregunta= Sintoma::find(13);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=102;
         }else{
-          $siguiente=4;
+          $siguiente=102;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -260,13 +245,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '14':
+        $pregunta= Sintoma::find(14);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=15;
         }else{
-          $siguiente=4;
+          $siguiente=15;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -275,13 +260,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '15':
+        $pregunta= Sintoma::find(15);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=16;
         }else{
-          $siguiente=4;
+          $siguiente=16;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -290,13 +275,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '17':
+        $pregunta= Sintoma::find(17);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=103;
         }else{
-          $siguiente=4;
+          $siguiente=103;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -305,13 +290,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '18':
+        $pregunta= Sintoma::find(18);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=20;
         }else{
-          $siguiente=4;
+          $siguiente=20;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -320,13 +305,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '19':
+        $pregunta= Sintoma::find(19);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=24;
         }else{
-          $siguiente=4;
+          $siguiente=104;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -335,13 +320,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '20':
+        $pregunta= Sintoma::find(20);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=21;
         }else{
-          $siguiente=4;
+          $siguiente=21;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -350,13 +335,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '21':
+        $pregunta= Sintoma::find(21);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=22;
         }else{
-          $siguiente=4;
+          $siguiente=22;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -365,13 +350,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '22':
+        $pregunta= Sintoma::find(22);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=23;
         }else{
-          $siguiente=4;
+          $siguiente=23;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -380,13 +365,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '23':
+        $pregunta= Sintoma::find(23);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=105;
         }else{
-          $siguiente=4;
+          $siguiente=105;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -395,13 +380,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '24':
+        $pregunta= Sintoma::find(24);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=25;
         }else{
-          $siguiente=4;
+          $siguiente=25;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -410,13 +395,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '25':
+        $pregunta= Sintoma::find(25);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=26;
         }else{
-          $siguiente=4;
+          $siguiente=26;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -425,13 +410,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '26':
+        $pregunta= Sintoma::find(26);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=27;
         }else{
-          $siguiente=4;
+          $siguiente=27;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -440,13 +425,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '27':
+        $pregunta= Sintoma::find(27);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=28;
         }else{
-          $siguiente=4;
+          $siguiente=28;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -455,13 +440,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '28':
+        $pregunta= Sintoma::find(28);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=106;
         }else{
-          $siguiente=4;
+          $siguiente=106;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -470,13 +455,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '29':
+        $pregunta= Sintoma::find(29);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=30;
         }else{
-          $siguiente=4;
+          $siguiente=30;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -485,13 +470,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '30':
+        $pregunta= Sintoma::find(30);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=31;
         }else{
-          $siguiente=4;
+          $siguiente=31;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -500,13 +485,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '31':
+        $pregunta= Sintoma::find(31);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=32;
         }else{
-          $siguiente=4;
+          $siguiente=32;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -515,13 +500,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '32':
+        $pregunta= Sintoma::find(32);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=107;
         }else{
-          $siguiente=4;
+          $siguiente=107;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -530,13 +515,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '33':
+        $pregunta= Sintoma::find(33);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=35;
         }else{
-          $siguiente=4;
+          $siguiente=108;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -545,13 +530,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '34':
+        $pregunta= Sintoma::find(34);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=38;
         }else{
-          $siguiente=4;
+          $siguiente=109;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -560,13 +545,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '35':
+        $pregunta= Sintoma::find(35);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=110;
         }else{
-          $siguiente=4;
+          $siguiente=36;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -575,13 +560,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '36':
+        $pregunta= Sintoma::find(36);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=37;
         }else{
-          $siguiente=4;
+          $siguiente=111;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -590,13 +575,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '37':
+        $pregunta= Sintoma::find(37);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=112;
         }else{
-          $siguiente=4;
+          $siguiente=112;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -605,13 +590,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '38':
+        $pregunta= Sintoma::find(38);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=39;
         }else{
-          $siguiente=4;
+          $siguiente=39;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -620,13 +605,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '39':
+        $pregunta= Sintoma::find(39);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=40;
         }else{
-          $siguiente=4;
+          $siguiente=40;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
@@ -635,28 +620,13 @@ class DiagnosticoController extends Controller
           'pac' => $pac,
         );
       return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
+        case '40':
+        $pregunta= Sintoma::find(40);
         $diagnostico=Diagnostico::orderBy('id','DESC')->first();
         if ($res==100) {
-          $siguiente=3;
+          $siguiente=113;
         }else{
-          $siguiente=4;
-        }
-        $response = array(
-          'pregunta' => '¿'.$pregunta->des_sin.'?',
-          'preg' =>$siguiente,
-          'dia' => $diagnostico->id,
-          'pac' => $pac,
-        );
-      return \Response::json($response);
-        case '3':
-        $pregunta= Sintoma::find(3);
-        $diagnostico=Diagnostico::orderBy('id','DESC')->first();
-        if ($res==100) {
-          $siguiente=3;
-        }else{
-          $siguiente=4;
+          $siguiente=113;
         }
         $response = array(
           'pregunta' => '¿'.$pregunta->des_sin.'?',
