@@ -4,6 +4,11 @@ namespace experto\Http\Controllers;
 
 use Illuminate\Http\Request;
 use experto\Paciente;
+use experto\Sintoma;
+use experto\Diagnostico;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
 
 class DiagnosticoController extends Controller
 {
@@ -14,6 +19,11 @@ class DiagnosticoController extends Controller
   public function diagnostico($id){
     $pacientes= Paciente::find($id);
     return view('diagnostico.evaluacion')->with('paciente',$pacientes);
+  }
+  public function cancelar(){
+    $pacientes= Paciente::get();
+    $mensaje="Diagnostico cancelado";
+    return redirect()->route('diagnostico.index')->with('mensaje2',$mensaje)->with('paciente',$pacientes);
   }
   public function motor_inferencia(){
     $preg=$_POST['preg'];
@@ -27,6 +37,7 @@ class DiagnosticoController extends Controller
             $diagnostico->cod_dia=0;
             $diagnostico->fec_dia= Carbon::now()->format('Y-m-d');
             $diagnostico->hor_dia= Carbon::now()->format('H:i:s');
+            $diagnostico->fin_dia=0;
             $diagnostico->id_dusu=Auth::user()->id;
             $diagnostico->id_dpac=$_POST['pac'];
             $diagnostico->id_dsint=0;

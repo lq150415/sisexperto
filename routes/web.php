@@ -34,6 +34,13 @@ Route::name('register.user')->post('registrar/usuario','UserController@registrar
 
     Route::get('diagnostico/{id}','DiagnosticoController@diagnostico');
     Route::post('diagnostico/getDiagnostico','DiagnosticoController@motor_inferencia');
+    Route::get('diagnosticos/cancelar','DiagnosticoController@cancelar');
+
+    Route::name('reporte.general')->get('reporte/general','ReporteController@general');
+    Route::name('reporte.mensual')->get('reporte/mensual','ReporteController@mensual');
+    Route::name('reporte.diario')->get('reporte/diario','ReporteController@diario');
+    Route::name('reporte.paciente')->post('reporte/paciente','ReporteController@paciente');
+    Route::name('reporte.rango')->post('reporte/rango','ReporteController@rango');
 
     Route::get('historial/pacientes/{id}','HistorialController@historial');
     //Custom middleware
