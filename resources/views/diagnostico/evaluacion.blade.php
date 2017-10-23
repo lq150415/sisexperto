@@ -32,17 +32,16 @@ Diagnostico de enfermedad tropical  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TRO
         <span><b>Ocupacion: </b>{{$paciente->ocu_pac}}</span><br>
         <span><b>Direccion: </b>{{$paciente->dir_pac}}</span><br>
         <br>
-        <a class="btn btn-raised btn-success" title="Diagnostico" onclick="llegada('as','asd','asd','sss')" data-toggle="modal" data-target="#miModal2"><i class="material-icons" >create</i> Comenzar diagnostico</a>
+        <a class="btn btn-raised btn-success" title="Diagnostico" onclick="llegada('0','0','0','{{$paciente->id}}')" data-toggle="modal" data-target="#miModal2"><i class="material-icons" >create</i> Comenzar diagnostico</a>
       </div>
 
   </div>
 </div>
 
-<div class="modal fade" id="miModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+<div class="modal fade" id="miModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title">Diagnostico de enfermedad tropical</h4>
       </div>
       <div class="modal-body">
@@ -53,9 +52,7 @@ Diagnostico de enfermedad tropical  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TRO
           </div>
         </fieldset>
       </div>
-     <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal"><i class="material-icons">close</i>Ok</button>
-      </div>
+
     </div>
     {!! Form::close() !!}
   </div>
@@ -111,45 +108,26 @@ Diagnostico de enfermedad tropical  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TRO
     </script>
 
     <script type="text/javascript">
-    function llegada(var1){
+    function llegada(var1,var2,var3, var4){
       var parametros = {
-                "id" : var1
+                "preg" : var1,
+                "diag" : var2,
+                "res" : var3,
+                "pac" : var4,
+                "_token": "{{ csrf_token() }}"
         };
+        console.log(parametros);
       $.ajax({
                 data:  parametros,
-                url:   'getTime',
+                url:   'getDiagnostico',
                 type:  'post',
                 beforeSend: function () {
                         document.getElementById('resultado').innerHTML='<center><img src="{{url('images/cargando2.gif')}}" alt="cargando" /><br />Cargando .....</center>'
                 },
                 success:  function (data) {
 
-                    var dhtml="<table class='table table-hover'><thead><tr><td>Fecha</td><td>Hora</td><tr></thead>";
-                        for (datas in data.datos) {
-                          var date =new Date(data.datos[datas].time.replace(/-/g,"/"));
-                          var time = new Date(data.datos[datas].time);
-                          var dd = new String(date.getDate());
-                          var mm = new String(date.getMonth()+1); //date es 0!
-                          var yyyy = new String(date.getFullYear());
-                          var hh= new String(time.getHours());
-                          var ii= new String(time.getMinutes());
-                          var ss= new String(time.getSeconds());
-                          if(hh.length ==1){
-                            hh='0'+hh;
-                          }if(ii.length ==1){
-                            ii='0'+ii;
-                          }if(ss.length==1){
-                            ss='0'+ss;
-                          }
-                          time=hh+':'+ii+':'+ss;
-                          if(dd.length==1){
-                            dd=  '0'+dd;
-                          }if(mm.lenght==1){
-                            mm=  '0'+mm;
-                          }
-                          date=  dd+'/'+mm+'/'+yyyy;
-                          dhtml+='<tr><td>'+date+'</td><td>'+time+'</td></tr>';
-                        };
+                    var dhtml='<div class="row"><div class="col-md-4" style="margin-top:20%;float:right; height:50px; width:350px;"><font size="5">'+data.pregunta+'</font></div><div> <img src="{{url('images/movimiento.gif')}}" style="height:230px; width:190px; float:left; margin-left:7%;"/></div></div><div class="modal-footer"><a type="button" onclick='+'"llegada('+"'"+data.preg+"','"+data.dia+"','100','"+data.pac+"'"+');"'+' class="btn btn-raised btn-success" ><i class="material-icons"> thumb_up </i> SI&nbsp;&nbsp; </a><br><a type="button" onclick='+'"llegada('+"'"+data.preg+"','"+data.dia+"','0','"+data.pac+"'"+');"'+' class="btn btn-raised btn-danger" ><i class="material-icons">thumb_down</i> NO</a></div><div><a href="{{url('/diagnostico/cancelar')}}" type="button" class="btn btn-raised btn-primary" data-dismiss="modal"><i class="material-icons">close</i>Cancelar</a></div>';
+
                     dhtml+='</table>';
                     $("#resultado").html(dhtml);
                 }

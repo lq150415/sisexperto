@@ -33,6 +33,7 @@ Route::name('register.user')->post('registrar/usuario','UserController@registrar
     Route::name('reserva.actualizar')->post('reserva/actualizar','ReservasController@actualizar');
 
     Route::get('diagnostico/{id}','DiagnosticoController@diagnostico');
+    Route::post('diagnostico/getDiagnostico','DiagnosticoController@motor_inferencia');
 
     Route::get('historial/pacientes/{id}','HistorialController@historial');
     //Custom middleware
