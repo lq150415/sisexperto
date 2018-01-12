@@ -34,7 +34,10 @@ Route::name('register.user')->post('registrar/usuario','UserController@registrar
 
     Route::get('diagnostico/{id}','DiagnosticoController@diagnostico');
     Route::post('diagnostico/getDiagnostico','DiagnosticoController@motor_inferencia');
-    Route::get('diagnosticos/cancelar','DiagnosticoController@cancelar');
+    Route::get('diagnosticos/cancelar/{id}','DiagnosticoController@cancelar');
+    Route::get('diagnostico/detalles/{id}','DiagnosticoController@detalles');
+    Route::post('diagnostico/detalles/getConsulta','DiagnosticoController@consulta');
+    Route::get('diagnostico/reporte/{id}','ReporteController@tratamiento');
 
     Route::name('reporte.general')->get('reporte/general','ReporteController@general');
     Route::name('reporte.mensual')->get('reporte/mensual','ReporteController@mensual');

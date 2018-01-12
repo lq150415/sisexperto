@@ -67,15 +67,14 @@ Historial de pacientes  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TROPICALES
               <fieldset>
                 <legend>Diagnosticos</legend>
               <div class="card-content table-responsive table-full-width">
-            <table class="table table-hover" id="pacientes">
+            <table class="table table-hover" id="diagnosticos">
               <thead>
-                <th data-dynatable-column="cod_pac">Codigo de paciente</th>
-                <th data-dynatable-column="ci_pac">C.I.</th>
-                <th data-dynatable-column="nom_pac">Nombre paciente</th>
-                <th data-dynatable-column="pat_pac">Paterno</th>
-                <th data-dynatable-column="mat_pac">Materno</th>
-                <th data-dynatable-column="edad">Edad</th>
-                <th data-dynatable-column="boton">Ver historial</th>
+                <th data-dynatable-column="cod_dia">Codigo de diagnostico</th>
+                <th data-dynatable-column="fec_dia">Fecha</th>
+                <th data-dynatable-column="hor_dia">Hora</th>
+                <th data-dynatable-column="medico">ID medico</th>
+                <th data-dynatable-column="dia_dia">Diagnostico</th>
+                <th data-dynatable-column="button">Ver</th>
               </thead>
               <tbody>
               </tbody>
@@ -135,30 +134,19 @@ Historial de pacientes  - SISTEMA DE DIAGNOSTICO DE ENFERMEDADES TROPICALES
 @section('script')
   <script type="text/javascript">
     $(function() {
-      var pacientes ={!! json_encode($paciente->toArray()) !!};
-      for (var i = 0; i < pacientes.length; i++) {
-        var id=pacientes[i].id;
-        var nom=pacientes[i].nom_pac;
-        var pat=pacientes[i].pat_pac;
-        var mat=pacientes[i].mat_pac;
-        var fec=pacientes[i].fec_pac;
-        var ci=pacientes[i].ci_pac;
-        var gen=pacientes[i].gen_pac;
-        var ocu=pacientes[i].ocu_pac;
-        var tel=pacientes[i].tel_pac;
-        var dir=pacientes[i].dir_pac;
-        var b="'"+id+"','"+nom+"','"+pat+"','"+mat+"','"+fec+"','"+ci+"','"+gen+"','"+ocu+"','"+tel+"','"+dir+"'";
-      pacientes[i].boton='<a title="Historial" class="btn btn-warning btn-raised active" href="historial/pacientes/'+pacientes[i].id+'"><i class="material-icons">history</i></a>';
+      var diagnosticos ={!! json_encode($diagnosticos->toArray()) !!};
+      for (var i = 0; i < diagnosticos.length; i++) {
+      diagnosticos[i].medico=diagnosticos[i].nom_user+' '+diagnosticos[i].pat_user+' '+diagnosticos[i].mat_user;
+      diagnosticos[i].button='<a href="{{url('diagnostico/detalles/')}}'+'/'+diagnosticos[i].id+'" class="btn btn-primary"><i class="material-icons">view_module</i> DETALLES</a>';
     }
-
-      $('#pacientes').dynatable({
-          dataset:{records:pacientes},
+      $('#diagnosticos').dynatable({
+          dataset:{records:diagnosticos},
       });
       $('#laboratorios').dynatable({
-          dataset:{records:pacientes},
+          dataset:{},
       });
       $('#tratamientos').dynatable({
-          dataset:{records:pacientes},
+          dataset:{},
       });
     });
   </script>

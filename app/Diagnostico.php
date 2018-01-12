@@ -14,7 +14,7 @@ class Diagnostico extends Model
   * @var array
   */
   protected $fillable = [
-    'cod_dia','fec_dia', 'hor_dia','fin_dia','id_usu','id_enf'
+    'cod_dia','fec_dia', 'hor_dia','fin_dia','id_usu','id_enf','dia_dia'
   ];
 
   /**
